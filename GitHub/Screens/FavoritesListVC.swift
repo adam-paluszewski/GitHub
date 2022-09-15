@@ -39,6 +39,7 @@ class FavoritesListVC: UIViewController {
         tableView.delegate = self
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.cellId)
         tableView.rowHeight = 80
+        tableView.removeExcessCells()
         
         view.addSubview(tableView)
         tableView.frame = view.bounds
@@ -49,21 +50,25 @@ class FavoritesListVC: UIViewController {
         PersistenceManager.retrieveFavorites { result in
             switch result {
                 case .success(let favorites):
-                    if favorites.isEmpty {
-                        showEmptyStateView(with: "You have no favorites. Add some 😊", in: self.view)
-                    } else {
-                        DispatchQueue.main.async {
-                            self.favorites = favorites
-                            self.tableView.reloadData()
-                            self.view.bringSubviewToFront(self.tableView)
-                        }
-                    }
+                    self.updateUI(with: favorites)
                 case .failure(let error):
                     self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
             }
         }
     }
 
+                
+    func updateUI(with favorites: [Follower]) {
+        if favorites.isEmpty {
+            showEmptyStateView(with: "You have no favorites. Add some 😊", in: self.view)
+        } else {
+            DispatchQueue.main.async {
+                self.favorites = favorites
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView)
+            }
+        }
+    }
 }
 
 
@@ -90,13 +95,16 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         let favorite = favorites[indexPath.row]
-        favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        
         PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { error in
-            if let error = error {
-                presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK")
+            guard let error = error  else {
+                favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                return
             }
+            presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK")
         }
+        
+
+        
     }
 }
