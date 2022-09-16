@@ -12,7 +12,7 @@ class FavoriteCell: UITableViewCell {
     static let cellId = "FavoriteCell"
  
     let avatarImageView = GFAvatarImageView()
-    let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 26)
+    let usernameLabel = GFTitleLabel(textAlignment: .left)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

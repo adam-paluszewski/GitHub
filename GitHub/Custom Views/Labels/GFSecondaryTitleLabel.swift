@@ -20,15 +20,16 @@ class GFSecondaryTitleLabel: UILabel {
     }
     
     
-    init(fontSize: CGFloat) {
+    init(textAlignment: NSTextAlignment) {
         super.init(frame: .zero)
-        self.font = .systemFont(ofSize: fontSize, weight: .medium)
+        self.textAlignment = textAlignment
         configure()
     }
     
     
     private func configure() {
         textColor = .secondaryLabel
+        font = .systemFont(ofSize: 16, weight: .medium)
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.90
         lineBreakMode = .byTruncatingTail

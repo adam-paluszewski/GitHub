@@ -20,27 +20,33 @@ class GFButton: UIButton {
     }
     
     
-    init(backgroundColor: UIColor, title: String, systemImageName: String) {
+    init(title: String, backgroundColor: UIColor, systemImage: UIImage) {
         super.init(frame: .zero)
         configure()
-        self.set(backgroundColor: backgroundColor, title: title, systemImageName: systemImageName)
+        self.set(title: title, backgroundColor: backgroundColor, systemImage: systemImage)
     }
     
     
     private func configure() {
-        configuration = .tinted()
+        configuration = .filled()
         configuration?.cornerStyle = .medium
         translatesAutoresizingMaskIntoConstraints = false
+        configuration?.title = "OK"
+        configuration?.baseForegroundColor = .white
+        configuration?.imagePlacement = .leading
+        configuration?.imagePadding = 5
+
+        configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = Fonts.buttonTitle
+            return outgoing
+         }
     }
     
     
-    func set(backgroundColor: UIColor, title: String, systemImageName: String) {
-        configuration?.baseBackgroundColor = backgroundColor
-        configuration?.baseForegroundColor = backgroundColor
+    func set(title: String, backgroundColor: UIColor, systemImage: UIImage) {
         configuration?.title = title
-        
-        configuration?.image = UIImage(systemName: systemImageName)
-        configuration?.imagePlacement = .leading
-        configuration?.imagePadding = 5
+        configuration?.baseBackgroundColor = backgroundColor
+        configuration?.image = systemImage
     }
 }

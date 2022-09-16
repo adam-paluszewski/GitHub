@@ -11,9 +11,9 @@ fileprivate var containerView: UIView!
 
 extension UIViewController {
     
-    func presentGFAlert(title: String, message: String, buttonTitle: String) {
+    func presentGFAlert(title: String, message: String, buttonTitle: String, buttonColor: UIColor, buttonSystemImage: UIImage) {
         DispatchQueue.main.async {
-            let alertVC = GFAlertVC(title: title, message: message, buttonTitle: buttonTitle)
+            let alertVC = GFAlertVC(title: title, message: message, buttonTitle: buttonTitle, buttonColor: buttonColor, buttonSystemImage: buttonSystemImage)
             alertVC.modalPresentationStyle = .overFullScreen
             alertVC.modalTransitionStyle = .crossDissolve
             self.navigationController?.present(alertVC, animated: true)

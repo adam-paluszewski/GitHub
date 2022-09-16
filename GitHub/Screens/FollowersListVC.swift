@@ -54,7 +54,7 @@ class FollowersListVC: UIViewController {
                 case .success(let followers):
                     self.updateUI(with: followers)
                 case .failure(let error):
-                    self.presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK")
+                self.presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             }
         }
     }
@@ -93,7 +93,7 @@ class FollowersListVC: UIViewController {
                 case .success(let user):
                     self.addUseerToFavorites(user: user)
                 case .failure(let error):
-                    self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+                self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             }
             
         }
@@ -104,10 +104,10 @@ class FollowersListVC: UIViewController {
         let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
         PersistenceManager.updateWith(favorite: favorite, actionType: .add) { error in
             if let _ = error {
-                self.presentGFAlert(title: "Something went wrong", message: "You already have this user in favorites.", buttonTitle: "OK")
+                self.presentGFAlert(title: "Something went wrong", message: "You already have this user in favorites.", buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             }
             else {
-                self.presentGFAlert(title: "Success!", message: "User added", buttonTitle: "OK")
+                self.presentGFAlert(title: "Success!", message: "User added", buttonTitle: "OK", buttonColor: .systemGreen, buttonSystemImage: SFSymbols.success)
             }
             
         }

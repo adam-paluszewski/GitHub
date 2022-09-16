@@ -39,7 +39,7 @@ class UserInfoVC: UIViewController {
                         self.configureUIElements(with: user)
                     }
                 case .failure(let error):
-                    self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+                self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             }
         }
     }
@@ -128,7 +128,7 @@ extension UserInfoVC: ItemInfoVCDelegate {
     
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
-            presentGFAlert(title: "Invalid URL", message: "the url is invalid", buttonTitle: "OK")
+            presentGFAlert(title: "Invalid URL", message: "the url is invalid", buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             return
         }
         let safariVC = SFSafariViewController(url: url)
@@ -138,7 +138,7 @@ extension UserInfoVC: ItemInfoVCDelegate {
     
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
-            presentGFAlert(title: "No followers", message: "This user has no followers.", buttonTitle: "OK")
+            presentGFAlert(title: "No followers", message: "This user has no followers.", buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             return
         }
         delegate.didRequestFollowers(for: user.login)

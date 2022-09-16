@@ -52,7 +52,7 @@ class FavoritesListVC: UIViewController {
                 case .success(let favorites):
                     self.updateUI(with: favorites)
                 case .failure(let error):
-                    self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+                self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
             }
         }
     }
@@ -101,9 +101,12 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
                 tableView.deleteRows(at: [indexPath], with: .left)
                 return
             }
-            presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK")
+            presentGFAlert(title: "Error", message: error.rawValue, buttonTitle: "OK", buttonColor: .systemRed, buttonSystemImage: SFSymbols.error)
         }
         
+        if favorites.isEmpty {
+            showEmptyStateView(with: "You have no favorites. Add some 😊", in: self.view)
+        }
 
         
     }

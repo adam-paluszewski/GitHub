@@ -10,10 +10,10 @@ import UIKit
 class GFUserInfoHeaderVC: UIViewController {
     
     let avatarImageView = GFAvatarImageView()
-    let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 34)
-    let nameLabel = GFSecondaryTitleLabel(fontSize: 18)
+    let usernameLabel = GFTitleLabel(textAlignment: .left)
+    let nameLabel = GFSecondaryTitleLabel(textAlignment: .left)
     let locationImageView = GFGenericImageView(frame: .zero)
-    let locationLabel = GFSecondaryTitleLabel(fontSize: 18)
+    let locationLabel = GFSecondaryTitleLabel(textAlignment: .left)
     let bioLabel = GFBodyLabel(textAlignment: .left)
     
     var user: User!

@@ -10,20 +10,24 @@ import UIKit
 class GFAlertVC: UIViewController {
     
     let containerView = GFAlertContainerView()
-    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
+    let titleLabel = GFTitleLabel(textAlignment: .center)
     let messageLabel = GFBodyLabel(textAlignment: .center)
-    let actionButton = GFButton(backgroundColor: .systemPink, title: "OK", systemImageName: "x.circle")
+    var actionButton = GFButton()
     
     var alertTitle: String?
     var message: String?
     var buttonTitle: String?
+    var buttonColor: UIColor?
+    var buttonImage: UIImage?
     
     
-    init(title: String, message: String, buttonTitle: String) {
+    init(title: String, message: String, buttonTitle: String, buttonColor: UIColor, buttonSystemImage: UIImage) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title
         self.message = message
-        self.buttonTitle = buttonTitle
+        self.actionButton.configuration?.title = buttonTitle
+        self.actionButton.configuration?.baseBackgroundColor = buttonColor
+        self.actionButton.configuration?.image = buttonSystemImage
     }
     
     
@@ -66,9 +70,9 @@ class GFAlertVC: UIViewController {
         //constraints
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 220),
-            containerView.widthAnchor.constraint(equalToConstant: 280),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),

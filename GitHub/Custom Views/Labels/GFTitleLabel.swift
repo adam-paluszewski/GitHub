@@ -20,15 +20,15 @@ class GFTitleLabel: UILabel {
     }
     
     
-    init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+    init(textAlignment: NSTextAlignment) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
-        self.font = .systemFont(ofSize: fontSize, weight: .bold)
         configure()
     }
     
     
     private func configure() {
+        font = Fonts.title
         textColor = .label
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9
