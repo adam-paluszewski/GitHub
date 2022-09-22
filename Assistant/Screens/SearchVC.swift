@@ -76,12 +76,12 @@ class SearchVC: UIViewController {
         view.addSubview(settingsButton)
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 250),
-            logoImageView.heightAnchor.constraint(equalToConstant: 250),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
             
-            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
+            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15),
             usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             usernameTextField.heightAnchor.constraint(equalToConstant: 50),
