@@ -51,12 +51,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9A715D728CFC16400556786 /* Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9A715DA28CFC16400556786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../Assistant/Support/AppDelegate.swift; sourceTree = "<group>"; };
-		E9A715DC28CFC16400556786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../Assistant/Support/SceneDelegate.swift; sourceTree = "<group>"; };
+		E9A715D728CFC16400556786 /* GH Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GH Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A715DA28CFC16400556786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9A715DC28CFC16400556786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9A715E328CFC16800556786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9A715E628CFC16800556786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E9A715E828CFC16900556786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Assistant/Info.plist; sourceTree = "<group>"; };
+		E9A715E828CFC16900556786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9A715EE28CFC47800556786 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		E9A715F028CFC48A00556786 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		E9A715F228CFC83900556786 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		E9A715CE28CFC16300556786 = {
 			isa = PBXGroup;
 			children = (
-				E9A715D928CFC16400556786 /* Assistant */,
+				E9A715D928CFC16400556786 /* GH Assistant */,
 				E9A715D828CFC16400556786 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,12 +118,12 @@
 		E9A715D828CFC16400556786 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9A715D728CFC16400556786 /* Assistant.app */,
+				E9A715D728CFC16400556786 /* GH Assistant.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9A715D928CFC16400556786 /* Assistant */ = {
+		E9A715D928CFC16400556786 /* GH Assistant */ = {
 			isa = PBXGroup;
 			children = (
 				E9A7160F28D08A5E00556786 /* Utilities */,
@@ -135,7 +135,7 @@
 				E9A7160028D081E700556786 /* Screens */,
 				E9A715E828CFC16900556786 /* Info.plist */,
 			);
-			path = Assistant;
+			path = "GH Assistant";
 			sourceTree = "<group>";
 		};
 		E9A7160028D081E700556786 /* Screens */ = {
@@ -295,9 +295,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E9A715D628CFC16400556786 /* Assistant */ = {
+		E9A715D628CFC16400556786 /* GH Assistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9A715EB28CFC16900556786 /* Build configuration list for PBXNativeTarget "Assistant" */;
+			buildConfigurationList = E9A715EB28CFC16900556786 /* Build configuration list for PBXNativeTarget "GH Assistant" */;
 			buildPhases = (
 				E9A715D328CFC16400556786 /* Sources */,
 				E9A715D428CFC16400556786 /* Frameworks */,
@@ -307,9 +307,9 @@
 			);
 			dependencies = (
 			);
-			name = Assistant;
+			name = "GH Assistant";
 			productName = GitHub;
-			productReference = E9A715D728CFC16400556786 /* Assistant.app */;
+			productReference = E9A715D728CFC16400556786 /* GH Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -327,7 +327,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9A715D228CFC16400556786 /* Build configuration list for PBXProject "Assistant" */;
+			buildConfigurationList = E9A715D228CFC16400556786 /* Build configuration list for PBXProject "GH Assistant" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -340,7 +340,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9A715D628CFC16400556786 /* Assistant */,
+				E9A715D628CFC16400556786 /* GH Assistant */,
 			);
 		};
 /* End PBXProject section */
@@ -538,10 +538,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DX25SM5F6D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Assistant/Info.plist;
+				INFOPLIST_FILE = "GH Assistant/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Assistant;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -553,7 +553,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AdamP.Assistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdamP.GitHubAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -567,10 +567,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = DX25SM5F6D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Assistant/Info.plist;
+				INFOPLIST_FILE = "GH Assistant/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Assistant;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -582,7 +582,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AdamP.Assistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AdamP.GitHubAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -593,7 +593,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9A715D228CFC16400556786 /* Build configuration list for PBXProject "Assistant" */ = {
+		E9A715D228CFC16400556786 /* Build configuration list for PBXProject "GH Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9A715E928CFC16900556786 /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9A715EB28CFC16900556786 /* Build configuration list for PBXNativeTarget "Assistant" */ = {
+		E9A715EB28CFC16900556786 /* Build configuration list for PBXNativeTarget "GH Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9A715EC28CFC16900556786 /* Debug */,
